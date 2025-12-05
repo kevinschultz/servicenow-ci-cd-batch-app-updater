@@ -11,7 +11,7 @@ This toolset automates the process of updating multiple ServiceNow applications 
 
 ## Prerequisites
 
-- ServiceNow instance with CI/CD Spoke installed
+- Continuous Integration and Continuous Delivery (CICD) REST API application installed
 - API user credentials with permissions to:
   - Read `sys_store_app` table
   - Execute CI/CD batch install operations
@@ -71,6 +71,7 @@ After running the payload generator:
 - The batch updater has a 60-second timeout per request
 - Monitor the execution tracker for detailed progress and any errors
 - Test in a sub-production environment first
+- This assumes Basic Auth is ok for your use case - will require modification if not.
 
 ### ServiceNow Store Oddities
 
@@ -82,3 +83,7 @@ Uses ServiceNow's CI/CD API:
 - Endpoint: `/api/sn_cicd/app/batch/install`
 - Method: POST
 - Authentication: Basic Auth
+
+## Sources
+
+I used a lot of guidance and information from this <a href="https://github.com/ServiceNow/sncicd-batch-install">official ServiceNow repo on CI/CD</a>.
